@@ -1,0 +1,191 @@
+@import "./weather/weather.scss";
+@import "./components/textField/textField.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  // background-color: black;
+  // background-image: url("https://images.hdqwalls.com/wallpapers/beach-silent-relaxing-weather-4k-0o.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 31px;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.weather-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  // min-height: calc(100vh - 100px);
+  width: 980px;
+  margin: auto;
+}
+
+.bug {
+  margin: 40px auto;
+}
+
+.bugs {
+  margin: 20px auto;
+  list-style-type: none;
+  background: coral;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+
+  li {
+    height: 30px;
+    color: black;
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: cornflowerblue;
+    padding: 20px;
+    border-radius: 10px;
+
+    label {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      input {
+        margin-right: 10px;
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    width: 140px;
+    padding: 5px 10px;
+    word-break: break-all;
+  }
+
+  button {
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 26px;
+    width: 70px;
+    margin-left: 20px;
+    background: chartreuse;
+  }
+}
+
+.todo-app {
+  width: 600px;
+  background-color: #d0f6f6;
+  min-height: 100px;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px auto;
+}
+
+.text-field-dropdown {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-editing {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.grand,
+.parent,
+.child {
+  border: 1px solid;
+  min-height: 100px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.grand {
+  color: red;
+}
+
+.parent {
+  color: blue;
+}
+
+.child {
+  color: green;
+}
+
+.user-info {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 200px;
+  background: lightskyblue;
+  width: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 6px darkslategrey;
+  border-radius: 10px;
+
+  div {
+    padding: 20px;
+  }
+}
+
+.user-data {
+  background: darkseagreen;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: auto;
+  padding: 0;
+  padding-top: 20px;
+  min-height: 200px;
+  position: relative;
+}
+
+.data-button {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  line-height: 1.17648;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  min-width: 28px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #0071e3;
+  color: #fff;
+  position: absolute;
+  top: 9px;
+  border: none;
+  margin-left: 20px;
+}
