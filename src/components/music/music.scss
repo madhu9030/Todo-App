@@ -1,0 +1,48 @@
+.music-wrap {
+  height: 230px;
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 20px;
+}
+
+.music {
+  width: 20px;
+  height: 230px;
+  margin: 0 10px;
+}
+
+@for $i from 1 through 5 {
+  .music:nth-of-type(#{$i}) {
+    $random-color: rgb(random(255), random(255), random(255));
+
+    background: linear-gradient(
+      $random-color 0%,
+      lighten($random-color, 25%) 100%
+    );
+    animation: move#{$i} random(1) + s linear random(1) + s infinite alternate;
+  }
+}
+
+@for $i from 1 through 5 {
+  @keyframes move#{$i} {
+    0% {
+      height: random(200) + px;
+    }
+    25% {
+      height: random(150) + px;
+    }
+    50% {
+      height: random(80) + px;
+    }
+    75% {
+      height: random(200) + px;
+    }
+    100% {
+      height: random(200) + px;
+    }
+  }
+}

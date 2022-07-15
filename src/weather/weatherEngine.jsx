@@ -22,7 +22,6 @@ function WeatherEngine(props) {
 
   // get data using Promiseses
   function updatePromise(e) {
-    //console.log(childSearch)
     const promise = new Promise((reslove, reject) => {
       reslove(
         fetch(
@@ -50,7 +49,7 @@ function WeatherEngine(props) {
     const checkNumPattern = /[a-z, A-Z]/gi;
     const checkPatteren =
       search.match(checkCharPattern) && search.match(checkNumPattern);
-    console.log(Boolean(checkPatteren));
+
     if (isNaN(search)) {
       checkUserValue = `q=${search}`;
     } else {
@@ -66,7 +65,21 @@ function WeatherEngine(props) {
   // Update the weather each time user search
   const updateweather = (search) => {
     getWeather(search).then((res) => {
-      // console.log(res)
+      const dateBuilder = (timezone) => {
+        const nowInLocalTime = Date.now() + 1000 * (timezone / 3600);
+        const millitime = new Date(nowInLocalTime);
+        const dateFormat = millitime.toLocaleString();
+
+        let day = millitime.toLocaleString("en-IN", { weekday: "long" });
+        let month = millitime.toLocaleString("en-IN", { month: "long" });
+        let date = millitime.toLocaleString("en-IN", { day: "numeric" });
+        let year = millitime.toLocaleString("en-IN", { year: "numeric" });
+        let hours = millitime.toLocaleString("en-IN", { hour: "numeric" });
+        let minutes = millitime.toLocaleString("en-IN", { minute: "numeric" });
+
+        return `${day} ${date} ${month} ${year} ${hours}:${minutes}`;
+      };
+      // console.log(res, dateBuilder(19800));
       return res.main
         ? setWeather({
             temp: res.main.temp,
@@ -95,13 +108,12 @@ function WeatherEngine(props) {
   const inputFocus = (e) => {
     if (e.target.value !== "") {
       e.target.classList.value = "focused";
-      console.log(e.target.classList);
     }
   };
   const id = `search-${Math.random() * 3}`;
   return (
     <div>
-      <div className="App">
+      <div className="App fade-in">
         <form className="search">
           <input
             id={id}

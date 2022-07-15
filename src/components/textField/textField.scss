@@ -69,3 +69,16 @@
   color: gray;
   border-top: 1px solid transparent;
 }
+
+.error-message {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  color: red;
+  text-align: left;
+  > span {
+    padding-left: 4px;
+    font-size: 12px;
+    text-align: left;
+  }
+}

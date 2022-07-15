@@ -1,0 +1,36 @@
+.button {
+  padding: 7px 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.5s;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  display: block;
+  width: 100px;
+  outline: none;
+
+  &:disabled {
+    background: grey;
+    cursor: default;
+  }
+
+  &.button-link {
+    background: none;
+    padding: 0;
+    width: auto;
+    color: blue;
+    &:hover {
+      text-decoration: underline;
+      color: rgb(34, 34, 224);
+    }
+    &:disabled {
+      color: grey;
+      cursor: default;
+      &:hover {
+        text-decoration: none;
+        cursor: default;
+      }
+    }
+  }
+}

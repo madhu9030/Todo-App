@@ -43,14 +43,18 @@ const TodoList = ({
   };
 
   return [
-    <div className="todo-list-title">Todo Lists</div>,
-    <div className="todo-list-wrapper">
+    <div key="todo-list" className="todo-list-title fade-in">
+      Todo Lists
+    </div>,
+    <div key="todo-list-wrapper" className="todo-list-wrapper fade-in">
       {filterList.map((todo) => (
-        <div id={todo.id} className="todo-list-container">
-          <div className="todo-list">
-            <div className={todo.completed ? "todo-completed" : ""}>
-              {todo.text}
-            </div>
+        <div id={todo.id} key={todo.id} className="todo-list-container">
+          <div
+            className={`todo-list animation${
+              todo.completed ? " todo-completed" : ""
+            }`}
+          >
+            <div>{todo.text}</div>
             <span>
               <i
                 id={todo.id}

@@ -1,9 +1,11 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import TodosDispatch from "../provider";
 const DropDown = ({ select, setSelect }) => {
   const selectHandler = (e) => {
     setSelect(e.target.value);
   };
+  const dispatch = useContext(TodosDispatch);
+  // console.log(dispatch);
   return (
     <select
       className="dropdown-selector"

@@ -1,0 +1,28 @@
+.loader {
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  margin: 20px;
+  border-radius: 50%;
+  border-top: 1px solid transparent;
+  animation: loader 1s linear infinite;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 20px;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

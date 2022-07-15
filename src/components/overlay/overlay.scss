@@ -1,0 +1,187 @@
+.overlay-main {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 20px;
+}
+
+@keyframes slide-top {
+  from {
+    top: 0;
+  }
+  to {
+    top: 50%;
+  }
+}
+
+.overlay-content {
+  display: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-top {
+  from {
+    top: 0;
+  }
+  to {
+    top: 50%;
+  }
+}
+
+.overlay-content-wrapper.show {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fade-in 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  animation-fill-mode: both;
+  z-index: 2;
+  display: block;
+
+  .overlay-content {
+    min-width: 300px;
+    position: relative;
+    display: block;
+    position: fixed;
+    top: 50%;
+    transition: fade-in 500ms ease-in-out;
+    max-width: 600px;
+    left: 50%;
+    padding: 50px;
+    border-radius: 8px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    min-height: 300px;
+    outline: none;
+
+    &.right {
+      animation: slide-right 0.5s ease-in-out;
+    }
+    &.bottom {
+      animation: slide-bottom 0.5s ease-in-out;
+    }
+    &.left {
+      animation: slide-left 0.5s ease-in-out;
+    }
+    &.top {
+      animation: slide-top 0.5s ease-in-out;
+    }
+
+    .overlay-cancel {
+      position: absolute;
+      cursor: pointer;
+      left: 20px;
+      top: 20px;
+      padding: 10px;
+
+      &::before {
+        content: "";
+        height: 20px;
+        border-left: 2px solid green;
+        position: absolute;
+        top: 9%;
+        left: 45.3%;
+        z-index: 4;
+        transform: rotate(45deg);
+      }
+      &::after {
+        content: "";
+        height: 20px;
+        border-left: 2px solid green;
+        position: absolute;
+        top: 8%;
+        left: 44.3%;
+        z-index: 4;
+        transform: rotate(-45deg);
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          border-left: 2px solid red;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide-top {
+  from {
+    top: 0;
+  }
+  to {
+    top: 50%;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-bottom {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 50%;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+.open-overlay {
+  border: none;
+  background: none;
+  color: blue;
+  /* padding: 10px; */
+  cursor: pointer;
+  margin: 10px;
+  outline: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.main-root {
+  overflow: hidden;
+}
+
+.fade {
+  animation: fade 500ms ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

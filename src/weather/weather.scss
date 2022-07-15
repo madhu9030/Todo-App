@@ -1,128 +1,150 @@
 .wa-wrapper {
-    color: black;
+  color: black;
 }
 
 .weather-main {
-    min-height: 250px;
-    width: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    margin: 20px auto;
-    padding: 5px;
-    box-shadow: 4px 4px 16px black;
-    
-    &.flip {
-        transform: rotate(360deg);
-        transition: transform 1.5s ease-in-out;
-    }
-    &.hot { 
-        background: linear-gradient(to bottom, red, pink);
-    }
-    &.cold { 
-        background: linear-gradient(to bottom, blue, lightblue);
-    }
+  min-height: 250px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin: 20px auto;
+  padding: 5px;
+  box-shadow: 4px 4px 16px black;
+
+  &.flip {
+    transform: rotate(360deg);
+    transition: transform 1.5s ease-in-out;
+  }
+  &.hot {
+    background: linear-gradient(to bottom, red, pink);
+  }
+  &.cold {
+    background: linear-gradient(to bottom, blue, lightblue);
+  }
 }
 
-.weather-city, .weather-logo, .weather-temp, .weather-type{
-    margin: 10px;
+.weather-city,
+.weather-logo,
+.weather-temp,
+.weather-type {
+  margin: 10px;
 
-    > h2 {
-        margin-bottom: 5px;
-    }
+  > h2 {
+    margin-bottom: 5px;
+  }
 }
 
 .weather-logo {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
-.search{
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
+.search {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  width: 230px;
+  input {
+    border-radius: 10px;
+    border: 2px solid grey;
     width: 230px;
-    input {
-        border-radius: 10px;
-        border: 2px solid grey;
-        width: 230px;
-        height: 45px;
-        padding: 0 8px;
-        font-weight: 600;
-        font-size: 14px;
-        padding-top: 8px;
-        &:focus {
-            border: 2px solid blue;
-            outline: none;
+    height: 45px;
+    padding: 0 8px;
+    font-weight: 600;
+    font-size: 14px;
+    padding-top: 8px;
+    &:focus {
+      border: 2px solid blue;
+      outline: none;
 
-            + label {
-                font-size: 8px;
-                top: 8px;
-                transition: all .12s ease-in;
-            }
-        }
-        &:not(:focus) + label + button{
-            color: grey;
-        }
-        &.focused + label{
-            font-size: 8px;
-            top: 8px;
-            transition: all .12s ease-in;
-        }
+      + label {
+        font-size: 8px;
+        top: 8px;
+        transition: all 0.12s ease-in;
+      }
     }
-    button {
-        border-radius: 8px;
-        width: 70px;
-        border: none;
-        background: none;
-        height: 20px;
-        font-weight: 400;
-        font-size: 18px;
-        position: absolute;
-        top: 12px;
-        right: 0;
-        color: blue;
-        cursor: pointer;
-        outline: none;
+    &:not(:focus) + label + button {
+      color: grey;
     }
-    label {
-        position: absolute;
-        left: 9px;
-        top: 13px;
-        color: grey;
-        font-weight: 500;
-        font-size: 14px;
+    &.focused + label {
+      font-size: 8px;
+      top: 8px;
+      transition: all 0.12s ease-in;
     }
+  }
+  button {
+    border-radius: 8px;
+    width: 70px;
+    border: none;
+    background: none;
+    height: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    position: absolute;
+    top: 12px;
+    right: 0;
+    color: blue;
+    cursor: pointer;
+    outline: none;
+  }
+  label {
+    position: absolute;
+    left: 9px;
+    top: 13px;
+    color: grey;
+    font-weight: 500;
+    font-size: 14px;
+  }
 }
 
 .spinner {
-    width: 30px;
-    height: 30px;
-    border: 2px solid red;
-    margin: 20px;
-    border-radius: 50%;
-    border-top: 1px solid transparent;
-    animation: spinner 1s linear infinite;
+  width: 30px;
+  height: 30px;
+  border: 2px solid red;
+  margin: 20px;
+  border-radius: 50%;
+  border-top: 1px solid transparent;
+  animation: spinner 1s linear infinite;
 }
 
-@keyframes spinner{
-    from {transform: rotate(0deg) }
-    to {transform: rotate(360deg)}
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .error {
-    color: white;
-    text-transform: capitalize;
-    font-weight: 500;
+  color: white;
+  text-transform: capitalize;
+  font-weight: 500;
 }
 
 @keyframes fade-in {
-    from {opacity: 0; display: none;}
-    to {opacity: 1; display: block;}
+  from {
+    opacity: 0;
+    display: none;
+  }
+  to {
+    opacity: 1;
+    display: block;
+  }
 }
 
 .fade-in {
-    animation: fade-in 1s ease-in-out;
+  animation: fade-in 1s linear forwards;
+}
+
+.weather-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 20px;
 }

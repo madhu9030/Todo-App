@@ -1,0 +1,32 @@
+.parent-scroll {
+    margin: 20px;
+    background-color: burlywood;
+    border: 1px solid grey;
+    border-radius: 10px;
+    display: flex;
+
+    .left-scroll,
+    .right-scroll {
+        width: 50%;
+        padding: 20px;
+        height: 200px;
+        overflow-y: scroll;
+
+        div {
+            margin-top: 10px;
+            padding: 10px;
+            &:nth-child(odd) {
+                background-color: rgb(120, 162, 240);
+                border-radius: 10px;
+            }
+            &:nth-child(even) {
+                background-color: rgb(241, 241, 92);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .left-scroll {
+        border-right: 1px solid grey;
+    }
+}
