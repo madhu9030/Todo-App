@@ -1,3 +1,6 @@
+@use 'sass:math';
+@use 'sass:color';
+
 .music-wrap {
   height: 230px;
   justify-content: center;
@@ -17,32 +20,40 @@
 
 @for $i from 1 through 5 {
   .music:nth-of-type(#{$i}) {
-    $random-color: rgb(random(255), random(255), random(255));
+    // Generate a random color
+    $random-color: rgb(math.random(255), math.random(255), math.random(255));
 
+    // Define the linear gradient with adjusted color
     background: linear-gradient(
       $random-color 0%,
-      lighten($random-color, 25%) 100%
+      color.adjust($random-color, $lightness: 25%) 100%
     );
-    animation: move#{$i} random(1) + s linear random(1) + s infinite alternate;
+
+    // Generate random animation timing
+    $duration: math.random(1) + s; // Random duration
+    $delay: math.random(1) + s;    // Random delay
+
+    // Apply the animation
+    animation: move#{$i} $duration $delay infinite alternate;
   }
 }
 
 @for $i from 1 through 5 {
   @keyframes move#{$i} {
     0% {
-      height: random(200) + px;
+      height: math.random(200) + px;
     }
     25% {
-      height: random(150) + px;
+      height: math.random(150) + px;
     }
     50% {
-      height: random(80) + px;
+      height: math.random(80) + px;
     }
     75% {
-      height: random(200) + px;
+      height: math.random(200) + px;
     }
     100% {
-      height: random(200) + px;
+      height: math.random(200) + px;
     }
   }
 }

@@ -1,5 +1,5 @@
-@import "./weather/weather.scss";
-@import "./components/textField/textField.scss";
+@use "./weather/weather.scss";
+@use "./components/textField/textField.scss";
 
 * {
   padding: 0;

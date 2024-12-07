@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../navBar/navBar.scss";
-import logo from "../../images/M-logo.png";
+// import logo from "../../images/M-logo.png";
 
 const NavBarSearch = ({ getFilterList, input }) => {
   return (

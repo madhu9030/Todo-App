@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, use } from "react";
 import WeatherEngine from "./weather/weatherEngine.jsx";
-import "./App.scss";
 import TextField from "./components/textField/textField.js";
 import TodoList from "./components/todos/todoList";
 import DropDown from "./components/todos/dropDown";
@@ -21,7 +20,7 @@ import SyncScroll from "./components/syncronousScroll/syncScroll";
  * Dummy user data: https://reqres.in/api/users?page=2
  */
 
-function App() {
+const  App = ()=> {
   //Local storage
   let localTodos = [];
   useEffect(() => {
@@ -179,6 +178,7 @@ function App() {
       </Router>
       {/* <Addition /> */}
       {/* <Main /> */}
+      {/* <div>Hello</div> */}
     </>
   );
 }

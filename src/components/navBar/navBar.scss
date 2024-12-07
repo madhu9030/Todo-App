@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .dropdown-container {
   ul {
     list-style-type: none;
@@ -81,7 +83,7 @@ $colors: red 1, green 2, blue 3;
 
 @for $i from 1 through 3 {
   .dropdown-content a:nth-of-type(#{$i}) {
-    animation: fadeInLinks #{$i/2}s;
+    animation: fadeInLinks math.div($i, 2) or calc($i / 2)
   }
 }
 
